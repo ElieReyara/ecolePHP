@@ -1,5 +1,5 @@
 <?php
-require_once '../models/subject.php'; // Assure-toi d'avoir une classe Subject
+require_once __DIR__ . '/../models/subject.php'; // Assure-toi d'avoir une classe Subject
 
 class SubjectController {
 

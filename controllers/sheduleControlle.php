@@ -1,6 +1,6 @@
 // controllers/ScheduleController.php
 <?php
-require_once '../models/schedule.php';
+require_once __DIR__ .'/../models/schedule.php';
 
 class ScheduleController {
 

@@ -1,8 +1,8 @@
 <?php
 // controllers/UserController.php : Contrôleur des utilisateurs
 
-require_once '../config/database.php'; // Assurez-vous que la connexion est bien établie
-require_once '../models/user.php';
+require_once __DIR__.'/../config/database.php'; // Assurez-vous que la connexion est bien établie
+require_once __DIR__.'/../models/user.php';
 
 class UserController {
     private $conn;

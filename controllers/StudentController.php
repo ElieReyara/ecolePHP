@@ -23,5 +23,5 @@ $average = $student->getAverageGrade();
 $schedule = $student->getSchedule();
 
 // Passer les données à la vue
-include '../views/students_views.php';
+include __DIR__ .'/../views/students_views.php';
 ?>

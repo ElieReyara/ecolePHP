@@ -1,5 +1,5 @@
 <?php
-require_once '../controllers/userController.php';
+require_once  __DIR__.'../controllers/userController.php';
 
 // Vérification que l'utilisateur est un admin
 session_start();

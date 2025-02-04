@@ -1,7 +1,7 @@
 <?php
 // TeacherController.php
 
-public function addSubject() {
+function addSubject() {
     session_start();
     
     // Vérifier si l'enseignant est connecté (user_id dans la session)

@@ -1,6 +1,6 @@
 <?php
-require_once '../models/grade.php';
-require_once '../models/student.php';  // Si tu veux récupérer l'étudiant par exemple
+require_once __DIR__ .'/../models/grade.php';
+require_once __DIR__ .'/../models/student.php';  // Si tu veux récupérer l'étudiant par exemple
 
 class GradeController {
 
