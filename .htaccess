@@ -1,0 +1,8 @@
+# .htaccess dans le dossier public
+
+RewriteEngine On
+
+# Redirection vers l'index.php ou fichier spécifique
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
