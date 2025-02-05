@@ -12,20 +12,6 @@ class UserController {
         $this->conn = $conn;
     }
 
-    // Méthode pour inscrire un nouvel utilisateur
-    public function signup($username, $password, $role, $first_name, $last_name) {
-        $user = new User($this->conn, $username, $password, $role);
-
-        // Ajouter l'utilisateur et le lier à la bonne table
-        $result = $user->addUser($username, $password, $role, $first_name, $last_name);
-
-        if ($result === true) {
-            return "Inscription réussie!";
-        } else {
-            return "Échec de l'inscription : " . $result;
-        }
-    }
-
     // Méthode pour connecter un utilisateur
     public function login($username, $password) {
         $user = new User($this->conn, $username, $password);

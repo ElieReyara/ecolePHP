@@ -14,8 +14,8 @@
         <h3 class="text-center">Connexion</h3>
         <form method="POST" action="../controllers/userController.php?action=login">
             <div class="mb-3">
-                <label for="username" class="form-label">Nom d'utilisateur :</label>
-                <input type="text" name="username" class="form-control" required>
+                <label for="id_user" class="form-label">Id Utilisateur :</label>
+                <input type="text" name="id_user" class="form-control" required>
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Mot de passe :</label>
