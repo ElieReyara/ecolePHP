@@ -80,15 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 
 
-
-
-
-
-
-
-
-
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Vérification du rôle de l'utilisateur
     $role = $_POST['role'];
