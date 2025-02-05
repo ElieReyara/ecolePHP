@@ -9,8 +9,9 @@ class Auth {
     private $conn;
 
     // Constructeur
-    public function __construct($conn, $username = '', $password = '', $role = '') {
+    public function __construct($conn, $id, $username = '', $password = '', $role = '') {
         $this->conn = $conn;
+        $this->id = $id;
         $this->username = $username;
         $this->password = $password;
         $this->role = $role;
@@ -18,9 +19,9 @@ class Auth {
 
     // Méthode pour se connecter (vérification du mot de passe)
     public function login() {
-        $query = "SELECT * FROM users WHERE username = ?";
+        $query = "SELECT * FROM users WHERE id = ?";
         $stmt = $this->conn->prepare($query);
-        $stmt->bind_param("s", $this->username);
+        $stmt->bind_param("i", $this->id);
         $stmt->execute();
         $result = $stmt->get_result();
 
