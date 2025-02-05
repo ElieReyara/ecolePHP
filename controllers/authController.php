@@ -7,7 +7,7 @@ require_once __DIR__.'/../models/user.php';
 // Vérification des requêtes POST
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $action = isset($_GET['action']) ? $_GET['action'] : '';
-    $controller = new UserController($conn); // Passer la connexion
+    $controller = new authController($conn); // Passer la connexion
 
     if ($action == 'signup') {
         $username = $_POST['username'];

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__.'/../config/database.php';
 
-class User {
+class Auth {
     private $id;
     private $username;
     private $password;
@@ -45,7 +45,7 @@ class User {
     }
 }
 
-class UserController {
+class authController {
     private $conn;
 
     // Constructeur avec la connexion à la base de données
@@ -55,7 +55,7 @@ class UserController {
 
     // Méthode pour connecter un utilisateur
     public function login($username, $password) {
-        $user = new User($this->conn, $username, $password);
+        $user = new Auth($this->conn, $username, $password);
 
         $authenticated_user = $user->login();
         if ($authenticated_user) {
