@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 
 // Redirection selon le rôle
 if ($_SESSION['role'] === 'admin') {
-    header("Location: ../views/signup_form.php");
+    header("Location: ../views/admin/signup_form.php");
     exit();
 } elseif ($_SESSION['role'] === 'teacher') {
     header("Location: ../views/teachers_view.php");

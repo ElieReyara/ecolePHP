@@ -19,11 +19,15 @@ class Auth {
 
     // Méthode pour se connecter (vérification du mot de passe)
     public function login() {
+        try{
         $query = "SELECT * FROM users WHERE id = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("i", $this->id);
         $stmt->execute();
         $result = $stmt->get_result();
+        }catch(mysqli_sql_exception $e){
+           echo "Erreur: " . $e->getMessage();
+        }
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
@@ -31,8 +35,9 @@ class Auth {
             if (password_verify($this->password, $user['password'])) {
                 return $user;
             }
+        }else{
+            return false;
         }
-        return false;
     }
 
     // Getter pour le rôle
@@ -45,6 +50,8 @@ class Auth {
         return $this->id;
     }
 }
+// $user1 = new Auth($conn, 4, "Bob", "qw");
+// $test = $user1->login();
 
 class authController {
     private $conn;
@@ -55,8 +62,8 @@ class authController {
     }
 
     // Méthode pour connecter un utilisateur
-    public function login($username, $password) {
-        $user = new Auth($this->conn, $username, $password);
+    public function login($id, $password) {
+        $user = new Auth($this->conn, $id, $username, $password);
 
         $authenticated_user = $user->login();
         if ($authenticated_user) {

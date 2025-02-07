@@ -1,7 +1,7 @@
 <?php
 session_start();
 // Vérifier les permissions si nécessaire
-require_once '../config/database.php';
+// require __DIR__."../config/database.php";
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +64,7 @@ require_once '../config/database.php';
     <h3 class="text-white text-center">Gestion Utilisateurs</h3>
     <a href="../public/dashboard.php"><i class="fas fa-home me-2"></i>Accueil</a>
     <a href="user.php"><i class="fas fa-users me-2"></i>Liste Utilisateurs</a>
-    <a href="login_form.php" class="btn btn-danger mt-3 mx-2"><i class="fas fa-sign-out-alt me-2"></i>Déconnexion</a>
+    <a href="../auth/login_form.php" class="btn btn-danger mt-3 mx-2"><i class="fas fa-sign-out-alt me-2"></i>Déconnexion</a>
 </div>
 
 <!-- Contenu principal -->
