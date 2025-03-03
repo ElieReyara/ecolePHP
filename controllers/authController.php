@@ -7,7 +7,6 @@ require_once __DIR__.'/../models/authModel.php';
 // Vérification des requêtes POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $action = isset($_GET['action']) ? $_GET['action'] : '';
-    $controller = new authController($conn); // Passer la connexion
 
     if ($action === 'signup') {
         $username = $_POST['username'];
@@ -16,13 +15,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $first_name = $_POST['first_name'];
         $last_name = $_POST['last_name'];
 
-        echo $controller->signup($username, $password, $role, $first_name, $last_name);
+        // echo $controller->signup($username, $password, $role, $first_name, $last_name);
 
     } elseif ($action === 'login') {
         $id_user = $_POST['id_user'];
         $password = $_POST['password'];
+        $controller2 = new Auth($conn, $id_user, $password); // Passer la connexion
 
-        if ($controller->login($id_user, $password)) {
+        if ($controller2->createSession($id_user, $password)) {
             header("Location: ../public/dashboard.php");
         } else {
             echo "Identifiants incorrects.";
